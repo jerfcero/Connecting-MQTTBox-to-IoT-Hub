@@ -1,6 +1,8 @@
 # <p style ="text-align: center;">Connecting MQTTBox to IoT Hub</p>
 We recently had a customer who wanted to use MQTTBox to test some messages into IoT Hub.  They were struggling getting MQTTBox to connect, so we was trying to help them.  Digging into the connectivity issues with them resulted in us understanding how to get MQTTBox to connect to Azure.  The below article is the result of that journey, and if you are struggling with MQTTBox we hope it helps you out too.
 
+you can download from https://www.microsoft.com/en-us/p/mqttbox/9nblggh55jzg
+
 ## Step 1 
 ---
 
@@ -87,7 +89,7 @@ We will cover the important sections of MQTTBox in detail for connection to IoT 
 <b>Note:</b><i>IoT Device SDK handles some of our connection info, but MQTTBox was not written using our SDK, so this field needs to get appended with the following:  /$iothub/websocket</i>
 
 * <b>Username</b> - is the FQDN name of the IoT Device, with some additional information.  It should look like the following:  {IoT Hub Name}.azure-devices.net/{Device Name}/?api-version=2018-06-30
-* <b>Password</b> - is the SAS token that was generated from above.
+* <b>Password</b> - is the SAS token that was generated from above (the entire line in double quotation marks)
 * <b>Append timestamp to MQTT client id</b> -This sould be set to "No".
 * <b>SSL/TLS Version</b> - This should be set to Auto.
 * <b>Will - QoS</b> - This should be set to 1
